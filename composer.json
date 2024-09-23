@@ -1,0 +1,25 @@
+{
+    "name": "espresso-dev/instagram-php",
+    "description": "A simple PHP class for accessing the Instagram API",
+    "keywords": ["instagram", "api"],
+    "homepage": "https://github.com/espresso-dev/instagram-php",
+    "type": "library",
+    "require": {
+        "php": ">=5.6",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "EspressoDev\\Instagram\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Herman Schutte",
+            "email": "herman@espresso.dev"
+        }
+    ],
+    "minimum-stability": "dev"
+}
