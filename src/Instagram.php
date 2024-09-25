@@ -230,6 +230,37 @@ class Instagram
     }
 
     /**
+     * Pagination
+     * @param object $obj
+     * @return object|null
+     * @throws InstagramException
+     */
+    public function pagination($obj)
+    {
+        if (is_object($obj) && !is_null($obj->paging)) {
+            if (!isset($obj->paging->next)) {
+                return null;
+            }
+
+            $apiCall = explode('?', $obj->paging->next);
+
+            if (count($apiCall) < 2) {
+                return null;
+            }
+
+            $function = str_replace(self::API_URL, '', $apiCall[0]);
+            parse_str($apiCall[1], $params);
+
+            // No need to include access token as this will be handled by _makeCall
+            unset($params['access_token']);
+
+            return $this->_makeCall($function, $params);
+        }
+
+        throw new InstagramException("Error: pagination() | This method doesn't support pagination.");
+    }
+
+    /**
      * Make a call to the Instagram API
      * @param string $endpoint
      * @param array $params
