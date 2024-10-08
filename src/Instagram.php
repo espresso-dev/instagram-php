@@ -50,12 +50,12 @@ class Instagram
     /**
      * @var int
      */
-    private $_timeout = 3000;
+    private $_timeout = 90000;
 
     /**
      * @var int
      */
-    private $_connectTimeout = 3000;
+    private $_connectTimeout = 20000;
 
     /**
      * InstagramBasicDisplay constructor.
