@@ -39,7 +39,7 @@ class Instagram
     /**
      * @var string
      */
-    private $_mediaFields = 'caption, id, media_type, media_url, permalink, thumbnail_url, timestamp, username, children{id, media_type, media_url, permalink, thumbnail_url, timestamp, username}';
+    private $_mediaFields = 'caption, id, media_type, media_url, permalink, thumbnail_url, comments_count, like_count, timestamp, username, children{id, media_type, media_url, permalink, thumbnail_url, timestamp, username}';
 
     /**
      * @var string
