@@ -45,7 +45,7 @@ echo "<a href='{$instagram->getLoginUrl()}'>Login with Instagram</a>";
 
 ```php
 // Get the OAuth callback code
-$code = $GET['code'];
+$code = $_GET['code'];
 
 // Get the short lived access token (valid for 1 hour)
 $token = $instagram->getOAuthToken($code, true);
