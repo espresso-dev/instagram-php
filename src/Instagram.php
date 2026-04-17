@@ -296,7 +296,12 @@ class Instagram
             throw new InstagramException('Error: _makeCall() - cURL error: ' . curl_error($ch), curl_errno($ch));
         }
 
-        curl_close($ch);
+        if (PHP_VERSION_ID >= 80000) {
+            unset($ch);
+        } else {
+            curl_close($ch);
+        }
+
         return json_decode($jsonData);
     }
 
